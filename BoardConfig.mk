@@ -26,6 +26,8 @@
 
 BOARD_VENDOR := htc
 
+-include vendor/htc/k2_ul/BoardConfigVendor.mk
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
@@ -88,7 +90,6 @@ BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x1608000
-#TARGET_KERNEL_SOURCE := kernel/htc/k2_ul
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true
@@ -131,7 +132,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_BOOTLOADER_BOARD_NAME := k2_ul
 
 # Kernel
-#TARGET_KERNEL_CONFIG := k2_ul_defconfig
+TARGET_KERNEL_CONFIG := k2_ul_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/k2_ul/bluetooth
@@ -145,6 +146,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00fffe00
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x54fffc00
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x49fffe00
 BOARD_FLASH_BLOCK_SIZE := 131072
+TARGET_USERIMAGES_USE_EXT4 := true
 #BOARD_VOLD_MAX_PARTITIONS := 36
 
 # Vold
@@ -152,7 +154,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Recovery
-TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/k2_ul/recovery/kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/k2_ul/recovery/kernel
 
 # TWRP
 DEVICE_RESOLUTION := 540x960
